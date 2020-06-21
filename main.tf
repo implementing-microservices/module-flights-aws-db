@@ -2,6 +2,16 @@ provider "aws" {
   region = var.aws_region
 }
 
+resource "aws_iam_group_policy_attachment" "RDS-access-attach" {
+  group      = var.tf_group_name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRDSDataFullAccess"
+}
+
+resource "aws_iam_group_policy_attachment" "Redis-access-attach" {
+  group      = var.tf_group_name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonElastiCacheFullAccess"
+}
+
 resource "aws_db_instance" "ms-flights-db" {
   allocated_storage    = 20
   storage_type         = "gp2"

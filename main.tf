@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_iam_group_policy_attachment" "RDS-access-attach" {
   group      = var.tf_group_name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonRDSDataFullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
 }
 
 resource "aws_iam_group_policy_attachment" "Redis-access-attach" {

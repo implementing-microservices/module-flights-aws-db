@@ -6,6 +6,14 @@ variable "tf_group_name" {
   type = string
 }
 
+variable "eks_id" {
+  type = string
+}
+
+variable "vpc_id" {
+  type = string
+}
+
 variable "subnet_a_id" {
   type = string
 }
